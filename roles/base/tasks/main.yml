@@ -1,0 +1,26 @@
+---
+- name: Update package cache
+  ansible.builtin.apt:
+    update_cache: true
+
+- name: Install curl
+  ansible.builtin.apt:
+    name: curl
+    state: present
+
+- name: Install basic utilities
+  ansible.builtin.apt:
+    name:
+      - unzip
+      - vim
+      - git
+    state: present
+
+- name: Upgrade installed packages
+  ansible.builtin.apt:
+    upgrade: dist
+
+- name: Install fail2ban
+  ansible.builtin.apt:
+    name: fail2ban
+    state: present
