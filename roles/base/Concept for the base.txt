@@ -1,0 +1,32 @@
+Base Role
+
+The base role prepares the Ubuntu server.
+
+It:
+
+Updates the package cache
+Installs curl
+Installs unzip
+Installs vim
+Installs git
+Upgrades packages
+Installs fail2ban
+
+Main file:
+
+roles/base/tasks/main.yml
+
+Example:
+
+- name: Install curl
+  ansible.builtin.apt:
+    name: curl
+    state: present
+
+state: present means:
+
+Make sure curl is installed.
+
+If curl is already installed, Ansible normally does not reinstall it.
+
+This is an example of idempotency.
