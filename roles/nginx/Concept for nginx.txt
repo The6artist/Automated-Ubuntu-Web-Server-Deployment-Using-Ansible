@@ -1,0 +1,38 @@
+# Nginx Role
+
+The Nginx role:
+
+Installs Nginx
+Creates the Nginx configuration
+Starts Nginx
+Enables Nginx at boot
+
+Files:
+
+roles/nginx/
+├── tasks/
+│   └── main.yml
+└── templates/
+    └── default.conf.j2
+
+# Jinja2 Template
+
+The file:
+
+default.conf.j2
+
+is an Nginx configuration template.
+
+It configures:
+
+Port: 80
+Website root: /var/www/html
+Default page: index.html
+
+Test the configuration:
+
+nginx -t
+
+Check the service by running this cmd:
+
+systemctl status nginx --no-pager
