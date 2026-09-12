@@ -1,0 +1,21 @@
+SSH Role
+
+The SSH role adds an SSH public key to the Ubuntu user's authorized_keys.
+
+The public key is read from:
+
+~/.ssh/id_ed25519.pub
+
+--------------------------------------
+
+Generate a key pair if required:
+
+ssh-keygen -t ed25519
+
+Check the public key:
+
+cat ~/.ssh/id_ed25519.pub
+
+The role then ensures the key exists in:
+
+~/.ssh/authorized_keys
