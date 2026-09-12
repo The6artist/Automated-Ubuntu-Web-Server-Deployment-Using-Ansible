@@ -1,0 +1,7 @@
+---
+# Reads the public key from wherever Ansible itself is running, not from the server
+- name: Add SSH public key
+  ansible.posix.authorized_key:
+    user: ubuntu
+    key: "{{ lookup('file', '~/.ssh/id_ed25519.pub') }}"
+    state: present
