@@ -1,0 +1,28 @@
+---
+# Copies index.html straight into Nginx's document root — no archive step needed for a single static file
+- name: Deploy website
+  ansible.builtin.copy:
+    src: index.html
+    dest: /var/www/html/index.html
+
+# Once you create an main.yml
+
+# run this command inside the ec2 instance 
+
+mkdir my-website
+cp index.html my-website/          # or just save index.html into this folder
+tar -czf my-website.tar.gz -C my-website .
+
+# update the the main.yml for the app 
+
+---
+- name: Copy website tarball
+  ansible.builtin.copy:
+    src: my-website.tar.gz
+    dest: /tmp/my-website.tar.gz
+
+- name: Extract website
+  ansible.builtin.unarchive:
+    src: /tmp/my-website.tar.gz
+    dest: /var/www/html
+    remote_src: true
