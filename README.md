@@ -1,4 +1,4 @@
-# Ansible Web Server Automation in the aws ec2 instance 
+# Ansible Web Server Automation In The AWS EC2 Instance 
 
 A beginner-friendly Ansible project that automates the configuration of an Ubuntu web server.
 
