@@ -1,4 +1,4 @@
-# Ansible Beginner Web Server Automation
+# Ansible Web Server Automation
 
 A beginner-friendly Ansible project that automates the configuration of an Ubuntu web server.
 
